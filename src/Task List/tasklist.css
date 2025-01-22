@@ -1,0 +1,96 @@
+.wrapper1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .TaskList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
+    width: 40%;
+  }
+  
+  .TaskList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-weight: bold;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 10px;
+    background: #ffe4e9;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .doneButton,
+  .deleteButton {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, #ff7aa2, #ff2d68);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .svgIcon {
+    width: 16px;
+    height: 16px;
+    fill: white;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .doneButton::after,
+  .deleteButton::after {
+    content: attr(data-label);
+    position: absolute;
+    left: 50%;
+    top: -8%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, font-size 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .doneButton:hover::after,
+  .deleteButton:hover::after {
+    opacity: 1;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 1);
+    transform: translate(-50%, -50%) translateY(25px);
+  }
+  
+  .doneButton:hover .svgIcon,
+  .deleteButton:hover .svgIcon {
+    opacity: 0;
+  }
+  
+  .doneButton:hover,
+  .deleteButton:hover {
+    width: 120px;
+    border-radius: 30px;
+    transform: scale(1.05);
+    color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .doneButton .svgIcon,
+  .deleteButton .svgIcon {
+    opacity: 1;
+  }
+  
